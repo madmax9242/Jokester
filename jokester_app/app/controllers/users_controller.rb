@@ -6,10 +6,9 @@ class UsersController < ApplicationController
 		@user = User.find_by(params[:id])
 	end
 
-
-	def show
-		
-	end
+ def show
+    @user = User.find(params[:id])
+  end
 
 
 	def new
@@ -17,15 +16,16 @@ class UsersController < ApplicationController
 	end
 
 
-	def create
-		@user = User.new(user_params)
-	    if @user.save
-	      flash[:success] = "Welcome to Jokester!"
-	      redirect_to users_path
-	    else
-	      format.html { :new }
-	    end
-	end
+	 def create
+    @user = User.new(user_params)
+    if @user.save
+    	log_in @user
+      
+      redirect_to @user
+    else
+      render 'new'
+    end
+  end
 
 
 	def edit

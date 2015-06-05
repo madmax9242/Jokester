@@ -1,27 +1,11 @@
-
-<p id="notice"><%= notice %></p>
-
-<h1><%= @user %>'s Profile</h1>
-
-<h3>
-<%= link_to 'Post a New joke', new_joke_path %>
-<%= link_to 'Jokes', jokes_path %></h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Account Information</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-      <tr>
-        <td><%= @user.first_name %> <%= user.last_name %></td>
-        <td><%= @user.username %></td>
-        <td><%= @user.email %></td>
-        <td><%= link_to 'Edit Account', edit_user_path(user) %></td>
-        <td><%= link_to 'Delete Account', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-  </tbody>
-</table>
+<% provide( @user.first_name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        
+        Welcome to Jokester <%= @user.first_name %>
+      </h1>
+    </section>
+  </aside>
+</div>
