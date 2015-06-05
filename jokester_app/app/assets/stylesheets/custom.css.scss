@@ -1,6 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.underHeader{
+	position: relative;
+	top: 15em;
+}
+
 /* universal */
 
 body {
@@ -53,3 +58,4 @@ footer ul li {
   float: left;
   margin-left: 15px;
 }
+
