@@ -1,12 +1,14 @@
 class JokesController < ApplicationController
 before_action :set_jokes, only: [:show, :edit, :update, :destroy]
 
+
+
 	def index
 		@jokes = Joke.all
 	end
 
 	def show
-		@joke = Joke.find(params[:id])
+		
 	end
 
 	def new
@@ -18,7 +20,7 @@ before_action :set_jokes, only: [:show, :edit, :update, :destroy]
 
 		respond_to do |format|
 			if @joke.save
-				format.html { redirect_to @joke, notice: 'Joke saved, funny guy.'}
+				format.html { redirect_to jokes_url, notice: 'Joke saved, funny guy.'}
 			else 
 				format.html { render :new }
 			end
@@ -54,4 +56,5 @@ before_action :set_jokes, only: [:show, :edit, :update, :destroy]
 		def joke_params
 			params.require(:joke).permit(:question, :answer)
 		end
+	
 end

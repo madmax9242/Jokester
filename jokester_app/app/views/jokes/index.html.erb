@@ -1,13 +1,14 @@
-<p id="notice"><%= notice %></p>
+
 <h1>The Best Fucking Jokes Around</h1>
 
-
+<%= notice %><br>
 
 <% @jokes.each do |joke| %>
 
-<img src="<%= joke.joke %>"><br>
+<%= joke.question %><br>
+<%= joke.answer %><br>
 <strong><%= link_to 'Show', joke %></strong> |
 <strong><%= link_to 'Edit', edit_joke_path(joke) %></strong> |
-<strong><%= link_to 'Delete', joke, method: :delete, data: { confirm: 'Are you sure you want to delete this?  That is pure gold!' } %></strong>
+<strong><%= link_to 'Delete', joke, method: :delete, data: { confirm: 'Are you sure you want to delete this?  That is pure gold!' } %></strong><br>
 
 <% end %>
