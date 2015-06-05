@@ -1,4 +1,4 @@
-class Joke < ApplicationController
+class JokesController < ApplicationController
 
 	def index
 		@jokes = Joke.all
