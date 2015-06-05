@@ -1,5 +1,5 @@
-class JokesController < ApplicationController
-	before_action :set_joke, only: [:show, :edit, :update, :destroy]
+class Joke < ApplicationController
+
 	def index
 		@jokes = Joke.all
 	end

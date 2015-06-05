@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
 
 	def index
-		@users = Users.all
+		@user = User.find(params[:id])
 		@jokes = Jokes.all
 	end
 
@@ -23,11 +23,10 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 	    if @user.save
-	      log_in @user
 	      flash[:success] = "Welcome to Jokester!"
-	      redirect_to @user
+	      redirect_to users_path
 	    else
-	      render 'new'
+	      format.html { :new }
 	    end
 	end
 
