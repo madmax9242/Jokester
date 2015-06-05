@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<h1>All time Favorie Jokes</h1>
+
+
+
+<% @jokes.each do |joke| %>
+
+<img src="<%= joke.joke %>"><br>
+<strong><%= link_to 'Show', joke %></strong> |
+<strong><%= link_to 'Edit', edit_joke_path(joke) %></strong> |
+<strong><%= link_to 'Delete', joke, method: :delete, data: { confirm: 'Are you sure you want to delete this?  That is pure gold!' } %></strong>
+
+<% end %>
