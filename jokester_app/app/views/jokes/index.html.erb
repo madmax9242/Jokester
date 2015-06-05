@@ -1,1 +1,17 @@
-index.html.erb
+<h2>All time favorite Jokes</h2>
+<!-- Joke getting inputted here -->
+<div class="container">
+	<% @jokes.each do |joke| %>
+		
+		<p><%= @joke.question %></p> 
+		
+		<p><%= @joke.answer %></p>
+		<strong><%= link_to 'Edit', edit_joke_path %></strong>
+		<strong><%= link_to 'Delete', joke, method: :delete, data: { confirm: 'Are you serious? This is Gold!'} %></strong>
+
+
+	<% end %>
+
+
+
+</div>
