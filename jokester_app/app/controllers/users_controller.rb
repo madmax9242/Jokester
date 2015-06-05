@@ -1,17 +1,14 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-
-
-
 	def index
-		@user = User.find(params[:id])
-		@jokes = Jokes.all
+		@users = User.all
+		@user = User.find_by(params[:id])
 	end
 
 
 	def show
-		@user = User.find(params[:id])
+		
 	end
 
 
@@ -63,7 +60,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :email, :password, :first_name, :last_name)
+      params.require(:user).permit(:id, :username, :email, :password, :first_name, :last_name)
     end
 
 end
