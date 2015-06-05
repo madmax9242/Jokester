@@ -1,10 +1,12 @@
-<p id="notice"><%= notice %></p>
+<%= notice %>
+
+<h1>Joke # <%= @joke.id %></h1>
+
+<br><div><%= @joke.question %><br>
+<%= @joke.answer %></div><br>
 
 
 
-<div><% @joke.joke %></div>
-
-
-
-<%= link_to 'Edit Joke', edit_joke_path(@joke) %> |
-<%= link_to 'The Joke is on you', joke_path %>
+<br><div><%= link_to 'Edit Joke', edit_joke_path(@joke) %> |
+<%= link_to 'The Joke is on you', jokes_path %></div>
+<br>
