@@ -5,24 +5,15 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 </head>
 <body>
 	<div class="container"> <img src="JokesterTitle.svg"> </div>
-	<header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home Page",   '#' %></li>
-            <li><%= link_to "Log in",   '#' %></li>
-            <li><%= link_to "Register", '#' %></li>
-            <li><%= link_to "Log Out",   '#' %></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+	
+      <%= render 'layouts/header' %>
+
 <div class="container">
 <%= yield %>
+<%= render 'layouts/footer' %>
 </div>
 
 </body>
