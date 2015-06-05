@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	attr_accessor :user
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 	def index
