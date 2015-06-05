@@ -1,1 +1,10 @@
-show.html.erb
+<p id="notice"><%= notice %></p>
+
+
+
+<div><%= @joke.joke %></div>
+
+
+
+<%= link_to 'Edit Joke', edit_joke_path(@joke) %> |
+<%= link_to 'The Joke is on you', joke_path %>
